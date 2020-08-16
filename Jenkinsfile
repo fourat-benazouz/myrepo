@@ -2,7 +2,7 @@ pipeline {
     agent any 
     stages {
         
-        stage('clone') { 
+        stage('Clone') { 
             steps {
                 sh "rm -rf *"
                 checkout([$class: 'GitSCM',
@@ -17,7 +17,7 @@ pipeline {
             }
         }
         
-        stage('clean') { 
+        stage('Clean') { 
             steps {
                 sh "mvn clean"
                 
@@ -26,7 +26,7 @@ pipeline {
             }
         }
         
-        stage('compiler') { 
+        stage('Compile') { 
             steps {
                 sh "mvn compile"
                 
