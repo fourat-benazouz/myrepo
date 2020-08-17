@@ -2,7 +2,7 @@ pipeline {
     agent any 
     stages {
         
-        stage('Clone') { 
+        stage('clone') { 
             steps {
                 sh "rm -rf *"
                 checkout([$class: 'GitSCM',
@@ -17,7 +17,7 @@ pipeline {
             }
         }
         
-        stage('Clean') { 
+        stage('clean') { 
             steps {
                 sh "mvn clean"
                 
@@ -26,7 +26,7 @@ pipeline {
             }
         }
         
-        stage('Compile') { 
+        stage('compiler') { 
             steps {
                 sh "mvn compile"
                 
@@ -37,6 +37,13 @@ pipeline {
         stage('packaging') { 
             steps {
                 sh "mvn package"
+                
+            }
+        }
+		
+		stage('preparing') { 
+            steps {
+                sh "cp ./target/employee-producer-0.0.1-SNAPSHOT.war /root/ansible-playbook/employee-producer-0.0.1-SNAPSHOT.war"
                 
             }
         }
