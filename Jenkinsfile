@@ -43,7 +43,7 @@ pipeline {
 		
 		stage('preparing') { 
             steps {
-                sh "cp ./target/employee-producer-0.0.1-SNAPSHOT.war /root/ansible-playbook/employee-producer-0.0.1-SNAPSHOT.war"
+                sh "cp ./target/employee-producer-0.0.1-SNAPSHOT.war /ansible-playbook/employee-producer-0.0.1-SNAPSHOT.war"
                 
             }
         }
