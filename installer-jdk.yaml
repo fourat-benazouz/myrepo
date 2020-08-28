@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Create directory for JDK
+    file: dest=/tmp/jdk-8u202-linux-x64 state=directory mode=0755
+  - name: Download
+    get_url:
+      url: http://anfadmin.ucsd.edu/linux/RHEL/7/x86_64/jdk-8u202-linux-x64.rpm
+      dest: /tmp/jdk-8u202-linux-x64
+      mode: 0755
+      force: no
+- hosts: 192.168.134.151
+  gather_facts: no
+  remote_user: root
+  become: true
+  tasks:
+  - name: Création dossier de destination pour jdk
+    file:
+      path: /root/java-jdk
+      state: directory
+  - copy:
+      src: /tmp/jdk-8u202-linux-x64/jdk-8u202-linux-x64.rpm
+      dest: /root/java-jdk/jdk-8u202-linux-x64.rpm
+      owner: root
+      group: root
+      mode: 0644
+  - name: installer JDK  avec un fichier locale
+    yum:
+      name: /root/java-jdk/jdk-8u202-linux-x64.rpm
+      state: present
