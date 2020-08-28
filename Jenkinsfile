@@ -43,7 +43,18 @@ pipeline {
 		
 		stage('ansible-install jdk') { 
                     steps {
-               	        sh "cd /root/ansible-playbook/ && ansible-playbook installer-jdk.yaml"                        
+               	        sh "ansible-playbook installer-jdk.yaml"                        
+            }
+        }
+	    stage('ansible-install and conifg tomcat') { 
+                    steps {
+               	        sh "ansible-playbook setup-tomcat.yaml"                        
+            }
+        }
+	    
+	    stage('Copy the war file') { 
+                    steps {
+               	        sh "ansible-playbook deploy.yaml"                        
             }
         }
     }
