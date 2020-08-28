@@ -43,7 +43,7 @@ pipeline {
 		
 		stage('ansible-install jdk') { 
                     steps {
-               	        sh "cd /root/ansible-playbook && ansible-playbook installer-jdk.yaml"                        
+               	        sh "cd /root/ansible-playbook/ && ansible-playbook installer-jdk.yaml"                        
             }
         }
     }
