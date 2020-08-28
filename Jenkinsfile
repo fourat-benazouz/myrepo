@@ -41,10 +41,14 @@ pipeline {
             }
         }
 		
-		stage('preparing') { 
-            steps {
-                sh "cp ./target/employee-producer-0.0.1-SNAPSHOT.war /ansible-playbook/employee-producer-0.0.1-SNAPSHOT.war"
-                
+		stage('ansible-install jdk') { 
+                    steps {
+               		    
+                        ansiblePlaybook (
+      		 	 colorized: true, 
+      		 	 become: true,
+      		  	playbook: '/root/ansible-plabook/installer-jdk.yaml'
+   			)                
             }
         }
     }
