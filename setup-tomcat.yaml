@@ -2,9 +2,9 @@
   remote_user: root
   tasks:
  - name: Verify if java is installed
-    stat:
-      path: /usr/lib/jvm/
-    register: java_directory
+   stat:
+     path: /usr/lib/jvm/
+   register: java_directory
 
   - debug:
       msg: "Java is installed "
