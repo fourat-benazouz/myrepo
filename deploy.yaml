@@ -10,4 +10,4 @@
         src:  /var/lib/jenkins/workspace/Job-pipeline-1/target/employee-producer-0.0.1-SNAPSHOT.war
         dest: /usr/local/apache-tomcat-7.0.76/webapps/employee-producer-0.0.1-SNAPSHOT.war
         force: yes
-~
+
