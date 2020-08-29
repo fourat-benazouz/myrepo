@@ -6,8 +6,8 @@
       path: /usr/lib/jvm/
     register: java_directory
     
- - debug:
-     msg: "Java is installed "
+  - debug:
+      msg: "Java is installed "
    when: java_directory.stat.exists and java_directory.stat.isdir   
     
   - name: add tomcatuser
