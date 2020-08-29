@@ -4,7 +4,7 @@
   - name: Verify if java is installed
     stat:
       path: /usr/lib/jvm/
-   register: java_directory
+    register: java_directory
 
   - debug:
       msg: "Java is installed "
