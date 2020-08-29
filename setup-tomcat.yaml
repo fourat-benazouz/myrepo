@@ -1,10 +1,10 @@
 - hosts: 192.168.134.151
   remote_user: root
   tasks:
-  - name: correct java version selected
+  - name: Verify if java is installed
     alternatives:
       name: java
-      path: /usr/java/jdk1.8.0_202-amd64/jre/bin/java
+      path: /usr/lib/jvm/
   - name: add tomcatuser
     user:
       name: tomcat
