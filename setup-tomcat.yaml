@@ -1,9 +1,9 @@
 - hosts: 192.168.134.151
   remote_user: root
   tasks:
- - name: Verify if java is installed
-   stat:
-     path: /usr/lib/jvm/
+  - name: Verify if java is installed
+    stat:
+      path: /usr/lib/jvm/
    register: java_directory
 
   - debug:
