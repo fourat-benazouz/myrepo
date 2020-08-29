@@ -2,9 +2,14 @@
   remote_user: root
   tasks:
   - name: Verify if java is installed
-    alternatives:
-      name: java
+    stat: 
       path: /usr/lib/jvm/
+    register: java_directory
+    
+ - debug:
+     msg: "Java is installed "
+   when: java_directory.stat.exists and java_directory.stat.isdir   
+    
   - name: add tomcatuser
     user:
       name: tomcat
