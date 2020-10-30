@@ -1,6 +1,6 @@
 # playbook to Install jdk
 #
-- hosts: 192.168.134.151
+- hosts: 192.168.0.22
   tasks:
     -
       name: Install JDK 
