@@ -1,4 +1,4 @@
-- hosts: 192.168.134.151
+- hosts: 192.168.0.22
   remote_user: root
   tasks:
   - name: Verify if java is installed
