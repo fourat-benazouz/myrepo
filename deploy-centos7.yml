@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Clone Virtual Machine
+      vmware_guest:
+        hostname: photon-machine.home
+        username: Administrator@zconsulting.local
+        password: Azerty@123456789
+        validate_certs: False
+        name: Web server
+        folder: Zconsulting
+        datacenter: Zconsulting
+        esxi_hostname: 192.168.0.29
+        template: "Machine-Centos7"
+        state: poweredon
