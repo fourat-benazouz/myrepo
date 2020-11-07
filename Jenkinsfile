@@ -40,7 +40,11 @@ pipeline {
                 
             }
         }
-		
+	stage('ansible-install colonnage de la VM CENTOS7') { 
+                    steps {
+               	        sh "ansible-playbook deploy-centos7.yml"                        
+            }
+	}	
 		stage('ansible-install jdk') { 
                     steps {
                	        sh "ansible-playbook installer-jdk.yaml"                        
