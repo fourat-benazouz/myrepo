@@ -44,7 +44,10 @@ pipeline {
                     steps {
                	        sh "ansible-playbook deploy-centos7.yml"                        
             }
-	}	
+	}
+	 stage ('Attente du power ON'){   
+		 sleep 10 
+	}
 		stage('ansible-install jdk') { 
                     steps {
                	        sh "ansible-playbook installer-jdk.yaml"                        
