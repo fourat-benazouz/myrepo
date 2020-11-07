@@ -10,8 +10,12 @@
         password: Azerty@123456789
         validate_certs: False
         name: Web server
-        folder: Vm
+        folder: vm
         datacenter: Zconsulting
         esxi_hostname: 192.168.0.29
         template: "Machine-Centos7"
         state: poweredon
+    - name: VM Network
+        ip: 192.168.0.25
+        netmask: 255.255.255.0
+        gateway: 192.168.0.1
