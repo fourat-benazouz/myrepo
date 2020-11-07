@@ -56,6 +56,7 @@ pipeline {
                     steps {
                	        sh "/usr/bin/sshpass -p root ssh-copy-id root@192.168.0.22"                        
             }
+	 }
 	stage('ansible-install jdk') { 
                     steps {
                	        sh "ansible-playbook installer-jdk.yaml"                        
