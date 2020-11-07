@@ -5,7 +5,7 @@
   tasks:
     - name: Clone Virtual Machine
       vmware_guest:
-        hostname: 192.168.0.29
+        hostname: 192.168.0.30
         username: Administrator@zconsulting.local
         password: Azerty@123456789
         validate_certs: False
