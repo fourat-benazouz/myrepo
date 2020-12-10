@@ -47,7 +47,7 @@ pipeline {
 	}
 	 stage('Attente du power ON'){ 
 		 steps {
-		 	sleep 10 
+		 	sleep 20
 	}
 		 
 		 
