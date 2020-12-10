@@ -54,7 +54,7 @@ pipeline {
 	    }
 	 stage('ssh-key') { 
                     steps {
-               	        sh "/usr/bin/sshpass -p root ssh-copy-id root@192.168.0.22"                        
+               	        sh "/usr/bin/sshpass -p root ssh-copy-id root@192.168.43.22"                        
             }
 	 }
 	stage('ansible-install jdk') { 
