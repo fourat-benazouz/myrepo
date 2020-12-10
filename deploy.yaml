@@ -2,7 +2,7 @@
 #
 -
   name: Copy files on remote servers part of group1
-  hosts: 192.168.0.22
+  hosts: 192.168.43.22
   tasks:
     -
       name: copy the war file to the prod
