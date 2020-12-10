@@ -13,5 +13,5 @@
         folder: vm
         datacenter: Zconsulting
         esxi_hostname: 192.168.43.29
-        template: "VM-centos7"
+        template: "VM-Centos7"
         state: poweredon
